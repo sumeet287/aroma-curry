@@ -183,12 +183,29 @@ i.animate-fade-in-up {
   border: none;
 }
 
-
-.react-time-picker__inputGroup__divider {
+.react-time-picker__inputGroup input {
+  background: transparent;
   color: white;
-  padding: 0 2px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0;
+  text-align: center;
 }
+
+.react-time-picker__inputGroup {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: center;
+}
+
 .react-time-picker-dark input:focus {
   outline: none !important;
   box-shadow: none !important;
+}
+/* global.css */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Makes it white */
+  cursor: pointer;
 }

@@ -60,19 +60,20 @@ export default function ContactPage() {
                 className="w-full bg-transparent text-white focus:outline-none border-none appearance-none"
               />
             </div>
-            <div className="bg-black/50 border border-white/20 px-4 py-2 rounded flex items-center gap-2 font-mono">
-              {(FaClock({ className: 'text-white' }) as JSX.Element)}
-              <TimePicker
-                onChange={(value) => setTime(value || '19:00')}
-                value={time}
-                disableClock={true}
-                className="react-time-picker-dark"
-                clearIcon={null}
-                format="hh:mm a"
-                amPmAriaLabel="Select AM/PM"
-              />
-            </div>
-
+            <div className="bg-black/50 border border-white/20 px-4 py-2 rounded flex items-center gap-3 font-mono h-[48px]">
+  {(FaClock({ className: 'text-white' }) as JSX.Element)}
+  <div className="flex-1">
+    <TimePicker
+      onChange={(value) => setTime(value || '19:00')}
+      value={time}
+      disableClock={true}
+      className="react-time-picker-dark w-full"
+      clearIcon={null}
+      format="hh:mm a"
+      amPmAriaLabel="Select AM/PM"
+    />
+  </div>
+</div>
             <button className="h-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded transition-all duration-300 hover:scale-105">
               Find a Table
             </button>
