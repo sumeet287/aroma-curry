@@ -26,7 +26,7 @@ export default function ContactPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[url('/images/contact-bg.png')] bg-cover bg-center text-white py-20 px-6">
+    <div className="min-h-screen bg-[url('/images/contact-bg.png')] bg-cover bg-center text-white py-20 px-6 overflow-y-auto">
       <div className="bg-black/70 backdrop-blur-lg rounded-xl max-w-6xl mx-auto p-10">
         <h1 className="text-4xl md:text-5xl font-extrabold text-center text-red-400 mb-6">Contact Us</h1>
         <p className="text-center text-lg text-gray-300 mb-12">
@@ -69,7 +69,7 @@ export default function ContactPage() {
           const [hours, minutes] = value.split(':').map(Number);
           if (minutes >= 60) {
             setTime(`${hours}:${minutes % 60}`); // Adjust minutes to valid range
-          } else {
+          } else {2
             setTime(value);
           }
         }

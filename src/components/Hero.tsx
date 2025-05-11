@@ -44,6 +44,7 @@ const Hero = () => {
         interval={3000}
         transitionTime={800}
         className="h-full"
+        swipeable={true} // Ensure swipe gestures work
       >
         {heroImages.map((img, i) => (
           <div key={i} className="relative min-h-[80vh] w-full">
@@ -51,11 +52,11 @@ const Hero = () => {
               src={isMobile ? img.mobile : img.desktop}
               alt={`Hero Slide ${i + 1}`}
               fill
-              className="object-cover"
+              className="object-cover pointer-events-none" // Prevent image from blocking scroll
               priority={i === 0}
               sizes="(max-width: 768px) 100vw, 100vw"
             />
-            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-black/50 pointer-events-none" />
             <div className="absolute bottom-8 left-0 right-0 flex flex-col sm:flex-row justify-center items-center gap-4 z-10 px-4">
               <a
                 href="/menu"
@@ -75,6 +76,6 @@ const Hero = () => {
       </Carousel>
     </section>
   );
-};
+}; 
 
 export default Hero;
