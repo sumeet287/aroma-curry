@@ -38,7 +38,7 @@ export default function ContactPage() {
           <h2 className="text-2xl font-semibold mb-6 text-white">Reserve a Table</h2>
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_1fr_auto] gap-4 items-center">
             <div className="bg-black/50 border border-white/20 px-4 py-2 rounded flex items-center gap-2">
-              <FaUser />
+              {(FaUser({ className: 'text-white' }) as JSX.Element)}
               <select
                 value={people}
                 onChange={(e) => setPeople(Number(e.target.value))}
@@ -52,7 +52,7 @@ export default function ContactPage() {
               </select>
             </div>
             <div className="bg-black/50 border border-white/20 px-4 py-2 rounded flex items-center gap-2">
-              <FaCalendarAlt />
+              {(FaCalendarAlt({ className: 'text-white' }) as JSX.Element)}
               <input
                 type="date"
                 value={date}
@@ -61,17 +61,17 @@ export default function ContactPage() {
               />
             </div>
             <div className="bg-black/50 border border-white/20 px-4 py-2 rounded flex items-center gap-2 font-mono">
-  <FaClock />
-  <TimePicker
-    onChange={(value) => setTime(value || '19:00')}
-    value={time}
-    disableClock={true}
-    className="react-time-picker-dark"
-    clearIcon={null}
-    format="hh:mm a"
-    amPmAriaLabel="Select AM/PM"
-  />
-</div>
+              {(FaClock({ className: 'text-white' }) as JSX.Element)}
+              <TimePicker
+                onChange={(value) => setTime(value || '19:00')}
+                value={time}
+                disableClock={true}
+                className="react-time-picker-dark"
+                clearIcon={null}
+                format="hh:mm a"
+                amPmAriaLabel="Select AM/PM"
+              />
+            </div>
 
             <button className="h-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded transition-all duration-300 hover:scale-105">
               Find a Table

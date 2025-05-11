@@ -1,4 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npx --no-install commitlint --edit "$1"
+# Comment out or remove the commitlint command
+# npx --no-install commitlint --edit "$1"

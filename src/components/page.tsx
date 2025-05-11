@@ -78,7 +78,12 @@ export default function ComponentPage() {
                       : 'border-gray-300 bg-white',
                     'focus:border-primary-400 focus:ring-primary-400 focus:outline-none focus:ring'
                   )}
-                  onChange={(e) => setColor(e.target.value as Color)}
+                  onChange={(e) => {
+                    const selectedColor = e.target.value as Color;
+                    if (colorList.includes(selectedColor)) {
+                      setColor(selectedColor); // Ensure only valid colors are set
+                    }
+                  }}
                 >
                   {colorList.map((c) => (
                     <option key={c} value={c}>
