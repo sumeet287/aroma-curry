@@ -1,6 +1,7 @@
 // 📁 src/components/Gallery.tsx
 'use client';
 import { useState, useEffect, useCallback } from 'react';
+import SectionHeading from './SectionHeading';
 
 const Gallery = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,9 +55,9 @@ const Gallery = () => {
   };
 
   return (
-    <section className="py-24 bg-gray-100">
+    <section className="py-4 bg-gray-100">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-red-700 mb-12 animate-fade-in-up">Gallery</h2>
+        <SectionHeading title="Gallery" /> 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {images.slice(0, 4).map((i, index) => (
             <img

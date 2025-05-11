@@ -4,6 +4,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
+  parser: "@typescript-eslint/parser",
   plugins: ['@typescript-eslint', 'simple-import-sort', 'unused-imports'],
   extends: [
     'eslint:recommended',
@@ -12,6 +13,10 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: "module" // Ensure ES Module compatibility
+  },
   rules: {
     'no-unused-vars': 'off',
     'no-console': 'warn',
@@ -76,6 +81,7 @@ module.exports = {
       },
     ],
     //#endregion  //*======== Import Sort ===========
+    "no-warning-comments": "off" // Adjust rules if needed
   },
   globals: {
     React: true,

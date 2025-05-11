@@ -35,7 +35,7 @@ const CateringInfo = () => {
 
   return (
     <section
-      className="py-24 bg-fixed bg-center bg-cover text-white"
+      className="py-4 bg-fixed bg-center bg-cover text-white"
       style={{ backgroundImage: "url('/images/catering-bg.png')" }}
     >
       <div className="max-w-6xl mx-auto px-6 bg-black/60 backdrop-blur-md p-8 rounded-lg animate-fade-in-up">

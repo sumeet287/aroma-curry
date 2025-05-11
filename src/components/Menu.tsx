@@ -41,7 +41,7 @@ const menuItems = [
 const Menu = () => {
   return (
     <section
-      className="py-24 bg-fixed bg-center bg-cover text-white"
+      className="py-4 bg-fixed bg-center bg-cover text-white"
       style={{ backgroundImage: "url('/images/menu-bg.png')" }}
     >
       <div className="max-w-7xl mx-auto px-6 bg-black/60 backdrop-blur-md p-10 rounded-lg animate-fade-in-up">

@@ -1,9 +1,9 @@
-'use client'; // Error components must be Client Components
+// 📁 src/components/ErrorPage.tsx
+'use client';
 
 import * as React from 'react';
 import { RiAlarmWarningFill } from 'react-icons/ri';
-
-import TextButton from '@/components/buttons/TextButton';
+import Link from 'next/link';
 
 export default function Error({
   error,
@@ -20,29 +20,42 @@ export default function Error({
 
   return (
     <main>
-      <section className="bg-gradient-to-br from-red-50 to-white">
-        <div className="layout flex min-h-screen flex-col items-center justify-center text-center text-red-700 px-4">
-          <span className="mb-4">
-            <div
-              className="drop-shadow-glow animate-pulse text-red-500"
-              style={{ fontSize: '60px' }}
-            >
-              <Icon />
-            </div>
-          </span>
-          <h1 className="mt-4 text-4xl md:text-6xl font-bold">
-            Oops, something went wrong!
-          </h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-xl">
-            We encountered an unexpected error. Don't worry — it's not your fault (unless you were trying to order biryani with a fork 😉).
+      <nav className="bg-red-600 p-4 text-white shadow-md">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <Link href="/">
+            <span className="text-2xl font-bold cursor-pointer">Aroma Curry</span>
+          </Link>
+          <div className="space-x-6 hidden md:block">
+            <Link href="/menu" className="hover:underline">Menu</Link>
+            <Link href="/catering" className="hover:underline">Catering</Link>
+            <Link href="/contact" className="hover:underline">Contact</Link>
+          </div>
+        </div>
+      </nav>
+
+      <section className="min-h-screen bg-[url('/images/error-bg.png')] bg-cover bg-center text-white flex flex-col justify-center items-center px-4 text-center">
+        <div className="bg-black/60 backdrop-blur-md p-8 rounded-lg max-w-xl w-full animate-fade-in-up">
+          <div className="text-red-400 mb-6 text-6xl animate-pulse">
+            <Icon />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Oops, something went wrong!</h1>
+          <p className="text-md text-gray-200 mb-6">
+            Looks like we're out of curry or the page you're looking for has vanished in the tandoor.
           </p>
-          <TextButton
-            variant="basic"
-            onClick={reset}
-            className="mt-8 border border-red-500 text-red-600 hover:bg-red-600 hover:text-white transition"
-          >
-            Try Again
-          </TextButton>
+          <div className="flex justify-center gap-4">
+            <button
+              onClick={reset}
+              className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded font-semibold"
+            >
+              Try Again
+            </button>
+            <Link
+              href="/"
+              className="bg-white text-red-600 px-6 py-2 rounded font-semibold hover:bg-gray-100"
+            >
+              Back to Home
+            </Link>
+          </div>
         </div>
       </section>
     </main>

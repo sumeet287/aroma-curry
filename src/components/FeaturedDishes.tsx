@@ -1,8 +1,10 @@
+import SectionHeading from "@/components/SectionHeading";
+
 const FeaturedDishes = () => {
   return (
-    <section id="menu" className="py-24 bg-gray-50">
+    <section id="menu" className="py-4 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-red-700 mb-12 animate-fade-in-up">Featured Dishes</h2>
+        <SectionHeading title="Featured Dishes" /> 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             { name: "Tandoori Chicken", desc: "Smoky, juicy and perfectly spiced.", img: "/images/featuredDish1.png" },

@@ -1,8 +1,10 @@
+import SectionHeading from "@/components/SectionHeading";
+
 const WhyChooseUs = () => {
   return (
-    <section className="py-24 bg-white text-center">
+    <section id="why-choose-us" className="py-4 bg-white text-center">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-red-700 mb-12 animate-fade-in-up">Why Choose Us</h2>
+        <SectionHeading title="Why Choose Us" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
