@@ -60,5 +60,11 @@
   "**/*.{js,jsx,ts,tsx}": "eslint --max-warnings=0",
   "**/*.{json,css,scss,md}": "prettier --write"
 },
-  "type": "commonjs"
+  "type": "commonjs",
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"],
+    "rules": {
+      "subject-case": [2, "always", ["lower-case", "kebab-case"]]
+    }
+  }
 }
