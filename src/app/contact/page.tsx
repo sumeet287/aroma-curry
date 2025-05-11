@@ -64,7 +64,16 @@ export default function ContactPage() {
   {(FaClock({ className: 'text-white' }) as JSX.Element)}
   <div className="flex-1">
     <TimePicker
-      onChange={(value) => setTime(value || '19:00')}
+      onChange={(value) => {
+        if (value) {
+          const [hours, minutes] = value.split(':').map(Number);
+          if (minutes >= 60) {
+            setTime(`${hours}:${minutes % 60}`); // Adjust minutes to valid range
+          } else {
+            setTime(value);
+          }
+        }
+      }}
       value={time}
       disableClock={true}
       className="react-time-picker-dark w-full"
